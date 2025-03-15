@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    serverActions: true,
+    serverActions: {
+      allowedOrigins: ['localhost:3000', 'pedidolisto.vercel.app'],
+    },
   },
   images: {
     domains: ['images.unsplash.com'],
@@ -9,6 +11,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  output: 'standalone',
   trailingSlash: false,
   async redirects() {
     return [
